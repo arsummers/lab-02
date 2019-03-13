@@ -28,9 +28,40 @@ Critter.load_data = () => {
 
 //render function
 Critter.display_all = () =>{
-  Critter.all_critters.forEach(critter => console.log(critter));
+  Critter.all_critters.forEach(critter => critter.render());
 }
 
+//logs all critters from JSON file
+Critter.prototype.render = function(){
+  //console.log(this);
+  let $template = $('#photo-template').children();
+  console.log($template);
+  //let $h2 = $template.
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//loads data when page is ready
 $(()=>Critter.load_data());
 
 
