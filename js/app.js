@@ -5,11 +5,26 @@
 //.then
 
 //constructor function for horned critters
-let Critter = function(image_url, title, description, keyword, horns){
-  this.image_url = image_url;
-  this.title = title;
-  this.description = description;
-  this.keyword = keyword;
-  this.horns = horns;
+let Critter = function(horned_creature){
+  this.image_url = horned_creature.image_url;
+  this.title = horned_creature.title;
+  this.description = horned_creature.description;
+  this.keyword = horned_creature.keyword;
+  this.horns = horned_creature.horns;
 }
+
+Critter.all_critters = [];
+
+Critter.load_data = () => {
+  $.get('./data/page-1.json', 'json')
+    .then(data => {
+      data.forEach(element => {
+        Critter.all_critters.push(new Critter(element));
+      });
+    })
+}
+
+
+
+
 
