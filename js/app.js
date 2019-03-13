@@ -34,9 +34,13 @@ Critter.display_all = () =>{
 //logs all critters from JSON file
 Critter.prototype.render = function(){
   //console.log(this);
-  let $template = $('#photo-template').children();
-  console.log($template);
-  //let $h2 = $template.
+  let $template = $('#photo-template').clone();
+  $template.id = '';
+  let $h2 = $template.find('h2');
+  let $img = $template.find('img');
+  let $p = $template.find('p');
+  //console.log($template);
+  $('main').append($template);
 }
 
 
