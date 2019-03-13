@@ -29,3 +29,16 @@ Finish time: 12:55
 
 Actual time needed to complete: ~2 hours
 
+
+# Feature 3, Styling
+Number and name of feature: 3, Styling
+Navigator: Aliya Summers
+Driver: Jesse Van Volkinburg
+
+Estimate of time needed to complete: 45 minutes
+
+Start time: 13:11
+Finish time: 13:28
+
+Actual time needed to complete: ~20 minutes
+
