@@ -57,14 +57,19 @@ $('select[keyword=""').on('change', function () {
 // }
 
 Critter.create_options = function() {
-  $('select').add('option');
-  // let $keyword = $(this).keyword;
-  let $option = $template.find('option');
-  console.log($option);
-  $option.text = this.keyword;
-  console.log($keyword);
-  console.log($option.text);
-  Critter.all_critters.forEach(critter => critter.option);
+  // need SOMETHING.add($createdOptionElement)
+  console.log(Critter.option);
+  Critter.option.forEach( (keyword) => {
+    console.log(keyword);
+    $('select').append('<option value=' + keyword + '>' + keyword + '</option>');;
+  });
+  // // let $keyword = $(this).keyword;
+  // let $option = $template.find('option');
+  // console.log($option);
+  // $option.text = this.keyword;
+  // console.log($keyword);
+  // console.log($option.text);
+  // Critter.all_critters.forEach(critter => critter.option);
 }
 
 //loads data when page is ready
