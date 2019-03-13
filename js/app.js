@@ -60,22 +60,10 @@ $('select').on('change', function () {
   if ($selection === 'default') $('section:not(#photo-template)').show();
 })
 
-// Critter.option = () => {
-//   Critter.all_critters.forEach(critter => critter.create_options());
-// }
-
 Critter.create_options = function() {
-  // need SOMETHING.add($createdOptionElement)
   Critter.options.forEach( (keyword) => {
     $('select').append('<option value=' + keyword + '>' + keyword + '</option>');
   });
-  // // let $keyword = $(this).keyword;
-  // let $option = $template.find('option');
-  // console.log($option);
-  // $option.text = this.keyword;
-  // console.log($keyword);
-  // console.log($option.text);
-  // Critter.all_critters.forEach(critter => critter.option);
 }
 
 //loads data when page is ready
