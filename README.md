@@ -24,7 +24,8 @@ Estimate of time needed to complete: 45 minutes
 
 Start time: 10:32
 Finish time: 11:58 (15-min break)
-Start time: 
+Start time:  12:09 (10-min break)
+Finish time: 12:55
 
-Actual time needed to complete: 57 minutes
+Actual time needed to complete: ~2 hours
 

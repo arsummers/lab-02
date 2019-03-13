@@ -43,6 +43,7 @@ Critter.prototype.render = function(){
   let $template = $('#photo-template').clone();
   $('main').append($template);
   $template.removeAttr('id');
+  $template.addClass(this.keyword);
   let $h2 = $template.find('h2')[0];
   let $img = $template.find('img')[0];
   let $p = $template.find('p')[0];
@@ -52,11 +53,11 @@ Critter.prototype.render = function(){
   $p.text = this.description;
 }
 
-$('select[keyword=""').on('change', function () {
+$('select').on('change', function () {
   let $selection = $(this).val();
-  $('img').hide();
-  $(`img[title="${$selection}"]`).show();
-  $
+  $('section').hide();
+  $(`.${$selection}`).show();
+  if ($selection === 'default') $('section').show();
 })
 
 // Critter.option = () => {
