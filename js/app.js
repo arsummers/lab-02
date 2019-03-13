@@ -1,8 +1,4 @@
 'use strict';
-//pull the JSON file
-//get data,
-//put data in array,
-//.then
 
 //constructor function for horned critters
 let Critter = function(horned_creature){
@@ -33,7 +29,6 @@ Critter.display_all = () =>{
 
 //logs all critters from JSON file
 Critter.prototype.render = function(){
-  //console.log(this);
   let $template = $('#photo-template').clone();
   $('main').append($template);
   $template.removeAttr('id');
@@ -44,10 +39,6 @@ Critter.prototype.render = function(){
   $img.src = this.image_url;
   $img.alt = this.keyword;
   $p.text = this.description;
-
-  //console.log($template);
-  console.log($h2);
-  //console.log($img);
 }
 
 
