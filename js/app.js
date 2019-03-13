@@ -15,6 +15,7 @@ let Critter = function(horned_creature){
 
 Critter.all_critters = [];
 
+//takes Critter data from JSON file
 Critter.load_data = () => {
   $.get('./data/page-1.json', 'json')
     .then(data => {
@@ -22,9 +23,14 @@ Critter.load_data = () => {
         Critter.all_critters.push(new Critter(element));
       });
     })
+    .then(Critter.display_all)
 }
 
+//render function
+Critter.display_all = () =>{
+  Critter.all_critters.forEach(critter => console.log(critter));
+}
 
-
+$(()=>Critter.load_data());
 
 
