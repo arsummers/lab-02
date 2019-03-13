@@ -47,10 +47,10 @@ Critter.prototype.render = function(){
   let $h2 = $template.find('h2')[0];
   let $img = $template.find('img')[0];
   let $p = $template.find('p')[0];
-  $h2.text = this.title;
+  $($h2).text(this.title);
   $img.src = this.image_url;
   $img.alt = this.keyword;
-  $p.text = this.description;
+  $($p).text(this.description);
 }
 
 $('select').on('change', function () {
