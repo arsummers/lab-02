@@ -57,7 +57,7 @@ $('select').on('change', function () {
   let $selection = $(this).val();
   $('section').hide();
   $(`.${$selection}`).show();
-  if ($selection === 'default') $('section').show();
+  if ($selection === 'default') $('section:not(#photo-template)').show();
 })
 
 // Critter.option = () => {
@@ -67,7 +67,6 @@ $('select').on('change', function () {
 Critter.create_options = function() {
   // need SOMETHING.add($createdOptionElement)
   Critter.options.forEach( (keyword) => {
-    console.log(keyword);
     $('select').append('<option value=' + keyword + '>' + keyword + '</option>');
   });
   // // let $keyword = $(this).keyword;
