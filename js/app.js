@@ -10,6 +10,7 @@ let Critter = function(horned_creature){
 }
 
 Critter.all_critters = [];
+Critter.option = [];
 
 //takes Critter data from JSON file
 Critter.load_data = () => {
@@ -17,14 +18,17 @@ Critter.load_data = () => {
     .then(data => {
       data.forEach(element => {
         Critter.all_critters.push(new Critter(element));
+        Critter.option.push(element.keyword);
       });
     })
     .then(Critter.display_all)
+    // .then(Critter.create_options)
 }
 
 //render function
 Critter.display_all = () =>{
   Critter.all_critters.forEach(critter => critter.render());
+  Critter.create_options();
 }
 
 //logs all critters from JSON file
@@ -41,27 +45,27 @@ Critter.prototype.render = function(){
   $p.text = this.description;
 }
 
+$('select[keyword=""').on('change', function () {
+  let $selection = $(this).val();
+  $('img').hide();
+  $(`img[title="${$selection}"]`).show();
+  $
+})
 
+// Critter.option = () => {
+//   Critter.all_critters.forEach(critter => critter.create_options());
+// }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Critter.create_options = function() {
+  $('select').add('option');
+  // let $keyword = $(this).keyword;
+  let $option = $template.find('option');
+  console.log($option);
+  $option.text = this.keyword;
+  console.log($keyword);
+  console.log($option.text);
+  Critter.all_critters.forEach(critter => critter.option);
+}
 
 //loads data when page is ready
 $(()=>Critter.load_data());
