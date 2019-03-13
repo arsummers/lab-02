@@ -10,7 +10,7 @@ let Critter = function(horned_creature){
 }
 
 Critter.all_critters = [];
-Critter.option = [];
+Critter.options = [];
 
 //takes Critter data from JSON file
 Critter.load_data = () => {
@@ -18,16 +18,23 @@ Critter.load_data = () => {
     .then(data => {
       data.forEach(element => {
         Critter.all_critters.push(new Critter(element));
-        Critter.option.push(element.keyword);
       });
     })
     .then(Critter.display_all)
     // .then(Critter.create_options)
 }
-
+let tempOptions = [];
 //render function
 Critter.display_all = () =>{
-  Critter.all_critters.forEach(critter => critter.render());
+  tempOptions = [];
+  Critter.all_critters.forEach(critter => {
+    critter.render();
+    tempOptions.push(critter.keyword);
+  });
+
+  Critter.options = [...new Set(tempOptions)];
+  console.log(Critter.options);
+
   Critter.create_options();
 }
 
@@ -58,10 +65,9 @@ $('select[keyword=""').on('change', function () {
 
 Critter.create_options = function() {
   // need SOMETHING.add($createdOptionElement)
-  console.log(Critter.option);
-  Critter.option.forEach( (keyword) => {
+  Critter.options.forEach( (keyword) => {
     console.log(keyword);
-    $('select').append('<option value=' + keyword + '>' + keyword + '</option>');;
+    $('select').append('<option value=' + keyword + '>' + keyword + '</option>');
   });
   // // let $keyword = $(this).keyword;
   // let $option = $template.find('option');

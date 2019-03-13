@@ -23,7 +23,8 @@ Driver: Jesse Van Volkinburg
 Estimate of time needed to complete: 45 minutes
 
 Start time: 10:32
-Finish time: 
+Finish time: 11:58 (15-min break)
+Start time: 
 
 Actual time needed to complete: 57 minutes
 
