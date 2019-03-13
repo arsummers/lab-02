@@ -35,12 +35,19 @@ Critter.display_all = () =>{
 Critter.prototype.render = function(){
   //console.log(this);
   let $template = $('#photo-template').clone();
-  $template.id = '';
-  let $h2 = $template.find('h2');
-  let $img = $template.find('img');
-  let $p = $template.find('p');
-  //console.log($template);
   $('main').append($template);
+  $template.removeAttr('id');
+  let $h2 = $template.find('h2')[0];
+  let $img = $template.find('img')[0];
+  let $p = $template.find('p')[0];
+  $h2.text = this.title;
+  $img.src = this.image_url;
+  $img.alt = this.keyword;
+  $p.text = this.description;
+
+  //console.log($template);
+  console.log($h2);
+  //console.log($img);
 }
 
 
